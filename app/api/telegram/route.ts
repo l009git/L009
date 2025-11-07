@@ -1,81 +1,70 @@
-import { NextResponse, NextRequest } from 'next/server';
-import axios from 'axios';
+import { NextRequest, NextResponse } from "next/server";
+import { Telegraf, Context } from "telegraf";
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+if (!TELEGRAM_BOT_TOKEN) throw new Error("TELEGRAM_BOT_TOKEN não definido");
+
 const REQUEST_TELEGRAM_API_KEY = process.env.REQUEST_TELEGRAM_API_KEY;
-const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini';
-const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; 
+const GEMINI_ENDPOINT_URL = "https://l009.com.br/api/gemini";
+const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || "";
 
-const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, X-Telegram-Bot-Api-Secret-Token',
-};
+// Cria instância do bot Telegraf
+const bot = new Telegraf<Context>(TELEGRAM_BOT_TOKEN);
 
-export async function OPTIONS() {
-  return NextResponse.json({}, { status: 200, headers: corsHeaders });
-}
-
-export async function POST(req: NextRequest) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let body: any;
+// === Handlers do bot ===
+bot.start((ctx) => ctx.reply("Oi 👋 Bem-vindo ao bot Next.js com Telegraf!"));
+bot.hears(/oi|olá|opa/i, (ctx) => ctx.reply("Oi! Tudo bem? 😄"));
+bot.on("text", async (ctx) => {
+  const userMessage = ctx.message.text;
 
   try {
-    const incomingSecretToken = req.headers.get('X-Telegram-Bot-Api-Secret-Token');
-
-    if (REQUEST_TELEGRAM_API_KEY && incomingSecretToken !== REQUEST_TELEGRAM_API_KEY) {
-        console.error('Webhook inválido: Secret Token não corresponde.');
-        return NextResponse.json({ error: 'Não autorizado.' }, { status: 401, headers: corsHeaders });
-    }
-
-    body = await req.json();
-    const message = body.message;
-
-    if (!message || !message.text) {
-        return NextResponse.json({ ok: true }, { headers: corsHeaders }); 
-    }
-
-    const chatID = message.chat.id;
-    const userMessage = message.text;
-
-    const geminiResponse = await axios.post(
-      GEMINI_ENDPOINT_URL,
-      {
-        message: userMessage,
-        instructions: 'Você é um assistente de bot do Telegram. Seja conciso e útil.'
+    // Chamada ao Gemini usando fetch
+    const geminiRes = await fetch(GEMINI_ENDPOINT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Request-Api-Key": REQUEST_GEMINI_API_KEY,
       },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Request-Api-Key': REQUEST_GEMINI_API_KEY,
-        },
-      }
-    );
-
-    const responseText = geminiResponse.data.response;
-
-    const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-    await axios.post(telegramApiUrl, {
-      chat_id: chatID,
-      text: responseText,
+      body: JSON.stringify({
+        message: userMessage,
+        instructions: "Você é um assistente de bot do Telegram. Seja conciso e útil.",
+      }),
     });
 
-    return NextResponse.json({ ok: true }, { headers: corsHeaders });
+    const geminiData = await geminiRes.json();
+    const responseText = geminiData.response || "Desculpe, não entendi.";
 
-  } catch (error) {
-    console.error('Erro no Webhook/Gemini:', error instanceof Error ? error.message : error);
-    
-    const chatID = body?.message?.chat?.id; 
-    
-    if (chatID && TELEGRAM_BOT_TOKEN) {
-        const errorText = 'Desculpe, houve uma falha interna na IA.';
-        await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, { chat_id: chatID, text: errorText }); 
+    await ctx.reply(responseText);
+  } catch (err) {
+    console.error("Erro Gemini:", err);
+    await ctx.reply("Desculpe, houve uma falha interna na IA.");
+  }
+});
+
+// === Webhook Handler Next.js ===
+export async function POST(req: NextRequest) {
+  try {
+    const incomingSecretToken = req.headers.get("X-Telegram-Bot-Api-Secret-Token");
+
+    if (REQUEST_TELEGRAM_API_KEY && incomingSecretToken !== REQUEST_TELEGRAM_API_KEY) {
+      console.error("Webhook inválido: Secret Token não corresponde.");
+      return NextResponse.json({ error: "Não autorizado." }, { status: 401 });
     }
 
-    return NextResponse.json(
-      { error: 'Falha ao processar o Webhook do Telegram.' },
-      { status: 500, headers: corsHeaders }
-    );
+    const text = await req.text();
+    if (!text) return NextResponse.json({ ok: true });
+
+    const body = JSON.parse(text);
+
+    await bot.handleUpdate(body); // processa a atualização recebida pelo Telegraf
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Erro no webhook:", err);
+    return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
   }
+}
+
+// === Opcional: GET para teste do webhook ===
+export async function GET() {
+  return NextResponse.json({ ok: true, message: "Webhook ativo ✅" });
 }
