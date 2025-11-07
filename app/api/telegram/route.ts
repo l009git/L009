@@ -46,7 +46,7 @@ Sempre responder sobre a empresa apenas.
 Nunca usar códigos listas, ou negrito **.
 Nuna responder com script.
 Apenas texto dissertativo.
-Respostas de no máximo 250 caracteres.
+Respostas focadas na pergunta e de no máximo 250 caracteres.
 `,
       }),
     });
