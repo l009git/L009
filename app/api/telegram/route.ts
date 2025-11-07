@@ -1,23 +1,16 @@
-// botInstance.ts
+import { NextRequest, NextResponse } from "next/server";
 import { Telegraf, Context } from "telegraf";
 
-const TELEGRAM_BOT_KEY = process.env.TELEGRAM_BOT_KEY;
-if (!TELEGRAM_BOT_KEY) throw new Error("TELEGRAM_BOT_KEY não definido");
+const TELEGRAM_API_KEY = process.env.TELEGRAM_API_KEY;
+if (!TELEGRAM_API_KEY) throw new Error("TELEGRAM_API_KEY não definido");
 
-const GEMINI_ENDPOINT_URL = "https://l009.com.br/api/gemini";
+const bot = new Telegraf<Context>(TELEGRAM_API_KEY);
 
-// Cria instância do bot
-export const bot = new Telegraf<Context>(TELEGRAM_BOT_KEY);
-
-// Handler para /start
-bot.start((ctx) => ctx.reply("Oi 👋 Bem-vindo ao bot!"));
-
-// Handler para qualquer mensagem de texto
 bot.on("text", async (ctx) => {
   const userMessage = ctx.message.text;
 
   try {
-    const geminiRes = await fetch(GEMINI_ENDPOINT_URL, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/gemini`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -26,12 +19,29 @@ bot.on("text", async (ctx) => {
       }),
     });
 
-    const geminiData = await geminiRes.json();
-    const responseText = geminiData.response || "Desculpe, não entendi.";
-
-    await ctx.reply(responseText);
+    const data = await res.json();
+    await ctx.reply(data.response || "Desculpe, não entendi.");
   } catch (err) {
-    console.error("Erro Gemini:", err);
-    await ctx.reply("Erro interno na IA.");
+    console.error(err);
+    await ctx.reply("Desculpe, houve uma falha interna na IA.");
   }
 });
+
+export async function POST(req: NextRequest) {
+  try {
+    const text = await req.text();
+    if (!text) return NextResponse.json({ ok: true });
+
+    const body = JSON.parse(text);
+    await bot.handleUpdate(body);
+
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error(err);
+    return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
+  }
+}
+
+export async function GET() {
+  return NextResponse.json({ ok: true, message: "Webhook ativo" });
+}
