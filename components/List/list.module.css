@@ -1,9 +1,19 @@
 .list {
     display: flex;
     flex-direction: column;
-    list-style: square;
+    gap: 5px;
+    list-style: none;
 }
 
 .list > li {
-    margin-left: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.list > li::before {
+    content: "●";
+    color: var(--primary);
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
 }
