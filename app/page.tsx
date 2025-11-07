@@ -94,7 +94,7 @@ export default function Home() {
           </Grid>
         </Grid>
         {/* Feedbacks */}
-        <Grid columns={3} id={'feedbacks'}>
+        <Grid columns={2} id={'feedbacks'}>
           <Card>
             <Small>Feedback</Small>
             <Feedback avatar={'/images/avatar1.jpg'} name={'Ana P.'} />
@@ -115,20 +115,6 @@ export default function Home() {
             <Feedback avatar={'/images/avatar4.jpg'} name={'Junior H.'} />
             <Paragraph fontStyle='italic'>
               {'"A L009 trouxe uma visão totalmente nova para nossos processos internos. As integrações personalizadas reduziram erros manuais e aumentaram a agilidade das entregas. Hoje conseguimos tomar decisões com base em dados reais e em tempo recorde."'}
-            </Paragraph>
-          </Card>
-          <Card>
-            <Small>Feedback</Small>
-            <Feedback avatar={'/images/avatar5.jpg'} name={'Carolina T.'} />
-            <Paragraph fontStyle='italic'>
-              {'"Fiquei impressionada com o nível de profissionalismo e atenção ao detalhe. A equipe da L009 realmente entende as necessidades do cliente e entrega soluções que fazem diferença. Nosso time ficou muito mais produtivo e satisfeito!"'}
-            </Paragraph>
-          </Card>
-          <Card>
-            <Small>Feedback</Small>
-            <Feedback avatar={'/images/avatar6.jpg'} name={'Eduardo S.'} />
-            <Paragraph fontStyle='italic'>
-              {'"A automação desenvolvida pela L009 eliminou tarefas repetitivas e melhorou a comunicação entre setores. Além disso, o acompanhamento pós-implantação foi impecável. É raro encontrar uma empresa tão comprometida com resultados."'}
             </Paragraph>
           </Card>
         </Grid>
