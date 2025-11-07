@@ -8,7 +8,7 @@ export const metadataObject: Metadata = {
         "automação de processos", 
         "tráfego pago", 
         "L009", 
-        "Balneário Camboriu"
+        "Balneário Camboriú"
     ],
     authors: [{ name: "Daniel Mazzeu" }],
     robots: {

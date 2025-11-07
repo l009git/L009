@@ -14,7 +14,7 @@ bot.on("text", async (ctx) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: userMessage,
-        instructions: "Você é um cavaleiro de ni",
+        instructions: "Você é um assistente da empresa L009 que ainda não foi 100% desenvolvido. Peça para a pessoa retornar em breve.",
       }),
     });
     const data = await res.json();
