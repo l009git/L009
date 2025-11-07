@@ -6,7 +6,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ children }) => {
-  const [speed, setSpeed] = useState('0s');
+  const [speed, setSpeed] = useState<string | null>(null);
 
   useEffect(() => {
     const randomSpeed = (Math.random() * 2 + 2).toFixed(2);
@@ -14,8 +14,17 @@ const Card: React.FC<CardProps> = ({ children }) => {
     setSpeed(`${randomSpeed}s`);
   }, []);
 
+  const cardProps = speed
+    ? { 
+        className: styles.card, 
+        style: { '--rotate-speed': speed } as React.CSSProperties 
+      }
+    : { 
+        className: styles.card
+      };
+
   return (
-    <div className={styles.card} style={{ '--rotate-speed': speed } as React.CSSProperties}>
+    <div {...cardProps}>
       <div className={styles['card-border']}></div>
       <div className={styles['card-container']}>
         {children}
