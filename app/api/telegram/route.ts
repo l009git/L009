@@ -1,32 +1,24 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { Telegraf, Context } from "telegraf";
 
-const TELEGRAM_BOT_KEY = process.env.TELEGRAM_BOT_KEY!;
-const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_BOT_KEY}`;
+const token = process.env.TELEGRAM_BOT_KEY;
+if (!token) throw new Error("TELEGRAM_BOT_KEY não definida no .env.local");
 
-export async function POST(req: Request) {
+const bot = new Telegraf<Context>(token);
+
+// === Handlers ===
+bot.start((ctx) => ctx.reply("Oi 👋 Bem-vindo ao bot Next.js com TypeScript!"));
+bot.hears(/oi|olá|opa/i, (ctx) => ctx.reply("Oi! Tudo bem? 😄"));
+bot.on("text", (ctx) => ctx.reply(`Você disse: ${ctx.message.text}`));
+
+// === Webhook Handler ===
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-
-    const chatId = body?.message?.chat?.id;
-    const text = body?.message?.text;
-
-    console.log("Mensagem recebida:", text);
-
-    if (chatId) {
-      // responde "Oi" de volta
-      await fetch(`${TELEGRAM_API}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: "Oi 👋",
-        }),
-      });
-    }
-
+    await bot.handleUpdate(body); // processa a atualização recebida
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error(err);
+    console.error("Erro no webhook:", err);
     return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
   }
 }
