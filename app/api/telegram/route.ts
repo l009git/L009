@@ -4,7 +4,7 @@ import axios from 'axios';
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const REQUEST_TELEGRAM_API_KEY = process.env.REQUEST_TELEGRAM_API_KEY;
 const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/';
-const REQUEST_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; 
+const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; 
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
       {
         headers: {
           'Content-Type': 'application/json',
-          'X-Request-Api-Key': REQUEST_API_KEY,
+          'X-Request-Api-Key': REQUEST_GEMINI_API_KEY,
         },
       }
     );
