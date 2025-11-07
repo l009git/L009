@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from 'next/server';
 import axios from 'axios';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const REQUEST_TELEGRAM_TOKEN = process.env.REQUEST_TELEGRAM_TOKEN;
+const TELEGRAM_SECRET_TOKEN = process.env.REQUEST_TELEGRAM_TOKEN;
 const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/';
 const REQUEST_API_KEY = process.env.REQUEST_API_KEY || '';
 
@@ -17,15 +17,18 @@ export async function OPTIONS() {
 }
 
 export async function POST(req: NextRequest) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let body: any;
+
   try {
     const incomingSecretToken = req.headers.get('X-Telegram-Bot-Api-Secret-Token');
 
-    if (REQUEST_TELEGRAM_TOKEN && incomingSecretToken !== REQUEST_TELEGRAM_TOKEN) {
+    if (TELEGRAM_SECRET_TOKEN && incomingSecretToken !== TELEGRAM_SECRET_TOKEN) {
         console.error('Webhook inválido: Secret Token não corresponde.');
         return NextResponse.json({ error: 'Não autorizado.' }, { status: 401, headers: corsHeaders });
     }
 
-    const body = await req.json();
+    body = await req.json();
     const message = body.message;
 
     if (!message || !message.text) {
@@ -63,10 +66,11 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error('Erro no Webhook/Gemini:', error instanceof Error ? error.message : error);
     
-    const chatID = (await req.json()).message?.chat?.id;
+    const chatID = body?.message?.chat?.id; 
+    
     if (chatID && TELEGRAM_BOT_TOKEN) {
         const errorText = 'Desculpe, houve uma falha interna na IA.';
-        await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, { chat_id: chatID, text: errorText });
+        await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, { chat_id: chatID, text: errorText }); 
     }
 
     return NextResponse.json(
