@@ -13,7 +13,8 @@ const bot = new Telegraf<Context>(TELEGRAM_BOT_TOKEN);
 
 // === Handlers do bot ===
 bot.start((ctx) => ctx.reply("Oi 👋 Bem-vindo ao bot Next.js com Telegraf!"));
-bot.hears(/oi|olá|opa/i, (ctx) => ctx.reply("Oi! Tudo bem? 😄"));
+
+// Responde a qualquer mensagem de texto
 bot.on("text", async (ctx) => {
   const userMessage = ctx.message.text;
 
