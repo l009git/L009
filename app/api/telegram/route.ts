@@ -6,7 +6,7 @@ import axios from 'axios';
 // 🔑 Variáveis de Ambiente
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const REQUEST_TELEGRAM_API_KEY = process.env.REQUEST_TELEGRAM_API_KEY; // Secret Token para o Webhook
-const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/'; // URL do serviço de IA (Bloco 1)
+const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini'; // URL do serviço de IA (Bloco 1)
 const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; // Chave para autenticar no serviço de IA
 
 const corsHeaders = {
