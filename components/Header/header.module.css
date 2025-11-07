@@ -35,14 +35,14 @@
 
 .textArea p {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
+  padding-inline: 25px;
   font-size: 14px;
-  max-width: 350px;
+  padding-top: 10px;
+  border-top: 1px solid #222;
   line-height: 1.5;
   text-align: center;
   color: #444;
-  padding-top: 10px;
-  border-top: 1px solid #222;
 }
 
 @media screen and (max-width: 800px) {
