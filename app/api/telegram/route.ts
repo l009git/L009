@@ -10,7 +10,7 @@ bot.on("text", async (ctx) => {
   const userMessage = ctx.message.text;
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/gemini`, {
+    const res = await fetch(`'https://l009.vercel.app/api/gemini`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
