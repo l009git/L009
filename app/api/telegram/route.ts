@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from 'next/server';
 import axios from 'axios';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_SECRET_TOKEN = process.env.TELEGRAM_SECRET_TOKEN;
+const REQUEST_TELEGRAM_TOKEN = process.env.REQUEST_TELEGRAM_TOKEN;
 const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/';
 const REQUEST_API_KEY = process.env.REQUEST_API_KEY || '';
 
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   try {
     const incomingSecretToken = req.headers.get('X-Telegram-Bot-Api-Secret-Token');
 
-    if (TELEGRAM_SECRET_TOKEN && incomingSecretToken !== TELEGRAM_SECRET_TOKEN) {
+    if (REQUEST_TELEGRAM_TOKEN && incomingSecretToken !== REQUEST_TELEGRAM_TOKEN) {
         console.error('Webhook inválido: Secret Token não corresponde.');
         return NextResponse.json({ error: 'Não autorizado.' }, { status: 401, headers: corsHeaders });
     }
