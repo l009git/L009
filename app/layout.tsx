@@ -1,5 +1,6 @@
 import { metadataObject } from "./metatags"; 
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Protection from '@/components//Protection/Protection';
 
