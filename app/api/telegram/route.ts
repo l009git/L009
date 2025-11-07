@@ -43,9 +43,11 @@ Ao iniciar, pergunte como pode 'acelerar, otimizar ou facilitar a rotina do clie
 Sempre destaque como os chatbots da L009 resolvem a 'perda de tempo com perguntas repetitivas'.
 Direcione clientes potenciais para o agendamento de consultoria, fornecendo o canal mais adequado (preferencialmente WhatsApp ou E-mail).
 Sempre responder sobre a empresa apenas.
-Nunca usar códigos listas, ou negrito.
+Nunca usar códigos listas, ou negrito **.
 Nuna responder com script.
-Apenas texto dissertativo.`,
+Apenas texto dissertativo.
+Respostas de no máximo 250 caracteres.
+`,
       }),
     });
     const data = await res.json();
