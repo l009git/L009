@@ -66,12 +66,7 @@
   0% {
     transform: scale(1.2) rotate(180deg);
     background-color: #fff;
-    box-shadow:
-      0 0 15px currentColor,
-      0 0 30px currentColor,
-      0 0 60px currentColor,
-      0 0 90px currentColor;
-    filter: blur(1px);
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor
   }
   50%, 100% {
     transform: scale(0.1);
