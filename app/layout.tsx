@@ -1,3 +1,5 @@
+// app/layout.tsx (Código Corrigido)
+
 import { metadataObject } from "./metatags"; 
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,19 +11,19 @@ import "./globals.css";
 export const metadata: Metadata = metadataObject;
 
 export default function RootLayout({
-  children,
+  children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        <Protection>
-          {children}
-        </Protection>
+  return (
+    <html lang="pt-BR">
+      <body>
+        <Protection>
+          {children}
+        </Protection>
         <Analytics />
         <SpeedInsights />
-      </body>
-    </html>
-  );
+      </body>
+    </html>
+  );
 }

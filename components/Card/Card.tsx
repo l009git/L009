@@ -14,17 +14,8 @@ const Card: React.FC<CardProps> = ({ children }) => {
     setSpeed(`${randomSpeed}s`);
   }, []);
 
-  const cardProps = speed
-    ? { 
-        className: styles.card, 
-        style: { '--rotate-speed': speed } as React.CSSProperties 
-      }
-    : { 
-        className: styles.card
-      };
-
   return (
-    <div {...cardProps}>
+    <div className={styles.card} style={{ '--rotate-speed': speed } as React.CSSProperties}>
       <div className={styles['card-border']}></div>
       <div className={styles['card-container']}>
         {children}
