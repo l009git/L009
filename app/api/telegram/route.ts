@@ -2,9 +2,9 @@ import { NextResponse, NextRequest } from 'next/server';
 import axios from 'axios';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_SECRET_TOKEN = process.env.REQUEST_TELEGRAM_TOKEN;
+const TELEGRAM_SECRET_TOKEN = process.env.REQUEST_TELEGRAM_API_KEY;
 const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/';
-const REQUEST_API_KEY = process.env.REQUEST_API_KEY || '';
+const REQUEST_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; 
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
