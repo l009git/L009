@@ -6,7 +6,7 @@ interface GeminiRequestBody {
   message: string;
 }
 
-const requestApiKey = process.env.REQUEST_API_KEY;
+const requestApiKey = process.env.REQUEST_GEMINI_API_KEY;
 
 const ai = new GoogleGenAI({});
 
@@ -23,7 +23,7 @@ export async function OPTIONS() {
 export async function POST(req: NextRequest) {
   try {
     if (!requestApiKey) {
-      console.error('REQUEST_API_KEY não está definida nas variáveis de ambiente.');
+      console.error('REQUEST_GEMINI_API_KEY não está definida nas variáveis de ambiente.');
       return NextResponse.json(
         { error: 'Configuração interna do servidor inválida.' },
         { status: 500, headers: corsHeaders }
