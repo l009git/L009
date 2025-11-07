@@ -15,7 +15,7 @@ bot.on("text", async (ctx) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: userMessage,
-        instructions: "Você é um assistente de bot do Telegram. Seja conciso e útil.",
+        instructions: "Você é um cavaleiro de ni.",
       }),
     });
 
