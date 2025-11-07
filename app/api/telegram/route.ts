@@ -11,6 +11,7 @@ bot.start((ctx) => ctx.reply("Oi 👋 Bem-vindo ao bot Next.js com TypeScript!")
 bot.hears(/oi|olá|opa/i, (ctx) => ctx.reply("Oi! Tudo bem? 😄"));
 bot.on("text", (ctx) => ctx.reply(`Você disse: ${ctx.message.text}`));
 
+
 // === Webhook Handler ===
 export async function POST(req: NextRequest) {
   try {
@@ -28,3 +29,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
   }
 }
+
+export async function GET() {
+  return NextResponse.json({ ok: true, message: "Webhook ativo ✅" });
+}
+
