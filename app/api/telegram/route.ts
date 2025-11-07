@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Telegraf, Context } from "telegraf";
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-if (!TELEGRAM_BOT_TOKEN) throw new Error("TELEGRAM_BOT_TOKEN não definido");
+const TELEGRAM_BOT_KEY = process.env.TELEGRAM_BOT_KEY;
+if (!TELEGRAM_BOT_KEY) throw new Error("TELEGRAM_BOT_KEY não definido");
 
 const REQUEST_TELEGRAM_API_KEY = process.env.REQUEST_TELEGRAM_API_KEY;
 const GEMINI_ENDPOINT_URL = "https://l009.com.br/api/gemini";
 const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || "";
 
 // Cria instância do bot Telegraf
-const bot = new Telegraf<Context>(TELEGRAM_BOT_TOKEN);
+const bot = new Telegraf<Context>(TELEGRAM_BOT_KEY);
 
 // === Handlers do bot ===
 bot.start((ctx) => ctx.reply("Oi 👋 Bem-vindo ao bot Next.js com Telegraf!"));
