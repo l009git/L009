@@ -14,7 +14,13 @@ bot.on("text", (ctx) => ctx.reply(`Você disse: ${ctx.message.text}`));
 // === Webhook Handler ===
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const text = await req.text(); // lê o corpo como texto
+    if (!text) {
+      // corpo vazio → responde OK para evitar retry infinito
+      return NextResponse.json({ ok: true });
+    }
+
+    const body = JSON.parse(text); // parse manual seguro
     await bot.handleUpdate(body); // processa a atualização recebida
     return NextResponse.json({ ok: true });
   } catch (err) {
