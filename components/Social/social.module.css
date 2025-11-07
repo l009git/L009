@@ -1,0 +1,20 @@
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.social > i {
+    padding-right: 20px;
+    font-size: 35px;
+    color: #fff;
+    border-right: 1px solid #222;
+}
+
+.social > p {
+    padding: 0 20px;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}

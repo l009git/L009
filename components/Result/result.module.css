@@ -1,0 +1,20 @@
+.result {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.success {
+  color: #00ff80;
+}
+
+.error {
+  color: #ff0044;
+}
+
+.info {
+  color: #00d9ff;
+}
