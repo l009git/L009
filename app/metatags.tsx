@@ -17,7 +17,7 @@ export const metadataObject: Metadata = {
     },
 
     icons: { 
-        icon: "/favicon.ico",
+        icon: "/images/favicon.ico",
     },
     
     openGraph: {
@@ -26,7 +26,7 @@ export const metadataObject: Metadata = {
         url: "https://L009.com.br",
         siteName: "L009",
         images: [{
-            url: "https://L009.com.br/thumbnail.png", 
+            url: "https://L009.com.br/images/thumbnail.png", 
         }],
         locale: "pt_BR",
         type: "website",
