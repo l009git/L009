@@ -3,7 +3,7 @@ import Infinite from '../Infinite/Infinite';
 
 export default function Header() {
   return (
-    <div className={styles.header}>
+    <div id="home" className={styles.header}>
         <div className={styles.logoArea}>
           <Infinite />
         </div>

@@ -15,6 +15,7 @@ import Social from '@/components/Social/Social';
 import Header from '@/components/Header/Header';
 import Main from '@/components/Main/Main'
 import Footer from '@/components/Footer/Footer';
+import Link from 'next/link';
 
 export default function Home() {
   const { form, result, loading, handleChange, handleSubmit } = ContactForm();
@@ -119,7 +120,16 @@ export default function Home() {
           </Card>
         </Grid>
       </Main>
-      <Footer />
+      <Footer>
+        <nav aria-label="Links principais">
+          <Link href="/#home">Início</Link>
+          <Link href="/#services">Serviços</Link>
+          <Link href="/#contact">Contato</Link>
+          <Link href="/#feedbacks">Feedbacks</Link>
+          <Link href="/terms">Termos de uso</Link>
+          <Link href="/policy">Políticas de privacidade</Link>
+        </nav>
+      </Footer>
     </>
   );
 }
