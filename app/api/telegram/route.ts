@@ -16,7 +16,7 @@ bot.on("text", async (ctx) => {
         message: userMessage,
         instructions: `A L009, fundada por Daniel Mazzeu, é focada na Automação de Processos e 
         Implementação de IA para acelerar, otimizar e facilitar a sua rotina. Nosso serviço principal 
-        é a criação de Chatbots que eliminam a perda de tempo com perguntas repetitivas, otimizando o seu atendimento. 
+        é a criação de Chatbots, automação de processos e tráfego pago, que eliminam a perda de tempo com perguntas repetitivas, otimizando o seu atendimento. 
         Para agendar uma consultoria, sugerimos o contato via WhatsApp ou E-mail.
         contato@l009.com.br
         16992399723
