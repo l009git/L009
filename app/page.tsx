@@ -83,7 +83,7 @@ export default function Home() {
           </Card>
           <Grid columns={3}>
             <Card>
-              <Social href="#" icon="bi bi-whatsapp" label="Whatsapp"></Social>
+              <Social href="https://wa.me/5516992399723" icon="bi bi-whatsapp" label="Whatsapp"></Social>
             </Card>
             <Card>
               <Social href="https://t.me/L009TelegramBot" icon="bi bi-telegram" label="Telegram"></Social>
