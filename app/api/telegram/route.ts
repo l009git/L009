@@ -27,21 +27,37 @@ bot.on("text", async (ctx) => {
   }
 });
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200, headers: corsHeaders });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const text = await req.text();
-    if (!text) return NextResponse.json({ ok: true });
+    if (!text) return NextResponse.json({ ok: true }, { headers: corsHeaders });
 
     const body = JSON.parse(text);
     await bot.handleUpdate(body);
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true }, { headers: corsHeaders });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, error: String(err) },
+      { status: 500, headers: corsHeaders }
+    );
   }
 }
 
 export async function GET() {
-  return NextResponse.json({ ok: true, message: "Webhook ativo" });
+  return NextResponse.json(
+    { ok: true, message: "Webhook ativo" },
+    { headers: corsHeaders }
+  );
 }
