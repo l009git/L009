@@ -9,7 +9,7 @@ interface SocialProps {
 
 const Social: React.FC<SocialProps> = ({ href, icon, label }) => {
   return (
-    <a href={href} className={styles.social}>
+    <a href={href} className={styles.social} target='_blank' rel='noopener noreferrer'>
       <i className={icon}></i>
       <p>{label}</p>
     </a>

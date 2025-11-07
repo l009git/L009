@@ -86,7 +86,7 @@ export default function Home() {
               <Social href="#" icon="bi bi-whatsapp" label="Whatsapp"></Social>
             </Card>
             <Card>
-              <Social href="#" icon="bi bi-telegram" label="Telegram"></Social>
+              <Social href="https://t.me/L009TelegramBot" icon="bi bi-telegram" label="Telegram"></Social>
             </Card>
             <Card>
               <Social href="#" icon="bi bi-discord" label="Discord"></Social>
