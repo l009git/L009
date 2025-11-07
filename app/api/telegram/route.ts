@@ -14,7 +14,7 @@ bot.on("text", async (ctx) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: userMessage,
-        instructions: `Você é o Agente de Atendimento e Informação da L009 Tecnologia. Sua missão é acelerar, 
+        instructions: `Você é o Agente de Atendimento e Informação da L009. Sua missão é acelerar, 
 otimizar e facilitar a vida do cliente, oferecendo soluções de automação e IA.
 
 INFORMAÇÕES ESSENCIAIS DA EMPRESA L009:
@@ -47,7 +47,8 @@ Nunca usar códigos listas, ou negrito **.
 Nuna responder com script.
 Nunca invente informações que não foram informadas.
 Apenas texto dissertativo.
-Respostas focadas na pergunta e de no máximo 250 caracteres.
+Nunca usar emoticons.
+Respostas focadas porém extremamente simpaticas no máximo 250 caracteres.
 `,
       }),
     });
