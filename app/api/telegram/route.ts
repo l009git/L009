@@ -3,8 +3,10 @@ import axios from 'axios';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const REQUEST_TELEGRAM_API_KEY = process.env.REQUEST_TELEGRAM_API_KEY;
-const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/';
-const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; 
+
+// Variáveis não são mais necessárias
+// const GEMINI_ENDPOINT_URL = 'https://l009.com.br/api/gemini/';
+// const REQUEST_GEMINI_API_KEY = process.env.REQUEST_GEMINI_API_KEY || ''; 
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -35,27 +37,21 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ ok: true }, { headers: corsHeaders }); 
     }
 
+    // 🎯 Extração dos IDs necessários
     const chatID = message.chat.id;
-    const userMessage = message.text;
+    const messageID = message.message_id;
+    const updateID = body.update_id;
 
-    const geminiResponse = await axios.post(
-      GEMINI_ENDPOINT_URL,
-      {
-        message: userMessage,
-        instructions: 'Você é um assistente de bot do Telegram. Seja conciso e útil.'
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Request-Api-Key': REQUEST_GEMINI_API_KEY,
-        },
-      }
-    );
-
-    const responseText = geminiResponse.data.response;
+    // 🎯 Criação da resposta com os IDs
+    const responseText = `✅ Confirmação do Webhook:\n\n` + 
+                         `• Chat ID: ${chatID}\n` + 
+                         `• Message ID: ${messageID}\n` +
+                         `• Update ID: ${updateID}\n` +
+                         `\nStatus: Integração Telegram -> Servidor OK!`;
 
     const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
+    // 🎯 Envia a resposta de volta ao usuário
     await axios.post(telegramApiUrl, {
       chat_id: chatID,
       text: responseText,
@@ -64,12 +60,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true }, { headers: corsHeaders });
 
   } catch (error) {
-    console.error('Erro no Webhook/Gemini:', error instanceof Error ? error.message : error);
+    console.error('Erro no Webhook:', error instanceof Error ? error.message : error);
     
+    // Tentativa de enviar erro de volta ao Telegram
     const chatID = body?.message?.chat?.id; 
     
     if (chatID && TELEGRAM_BOT_TOKEN) {
-        const errorText = 'Desculpe, houve uma falha interna na IA.';
+        const errorText = '⚠️ Falha no processamento. Verifique os logs do servidor.';
         await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, { chat_id: chatID, text: errorText }); 
     }
 
