@@ -44,8 +44,8 @@ textarea::-webkit-scrollbar { width: 7px; }
 textarea::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-thumb { border-radius: 7px; }
 textarea::-webkit-scrollbar-track { background: #000; }
-textarea::-webkit-scrollbar-thumb { background: #222; }
-textarea::-webkit-scrollbar-thumb:hover {  background: #fff; }
+textarea::-webkit-scrollbar-thumb { background: var(--theme); }
+textarea::-webkit-scrollbar-thumb:hover {  background: var(--theme); }
 
 .hidden { display: none !important; }
 
