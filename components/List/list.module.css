@@ -1,7 +1,7 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     list-style: none;
 }
 
@@ -12,8 +12,8 @@
 
 .list > li::before {
     content: "●";
-    color: var(--theme);
     display: inline-block;
     text-align: center;
+    color: var(--theme);
     margin-right: 10px;
 }

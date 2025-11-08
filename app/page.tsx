@@ -26,7 +26,7 @@ export default function Home() {
       <Header />
       <Main>
         {/* Services */}
-        <Grid columns={3} id="services">
+        <Grid columns={2} id="services">
           <Card>
             <Small>Serviço</Small>
             <Title>Automação de processos</Title>
@@ -45,6 +45,15 @@ export default function Home() {
                 <li>Whats. Telegram e Discord</li>
                 <li>Agentes IA</li>
                 <li>Fluxos personalizados</li>
+            </List>
+          </Card>
+          <Card>
+            <Small>Serviço</Small>
+            <Title>Desenvolvimento de<br></br>aplicativos</Title>
+            <Paragraph>Criamos aplicativos personalizados para web e dispositivos móveis (iOS e Android), desenvolvidos para resolver problemas específicos do seu negócio. Desde apps para gestão interna até plataformas para engajamento de clientes, entregamos soluções robustas e intuitivas que otimizam operações e abrem novas fontes de receita.</Paragraph>
+            <List>
+                <li>Android</li>
+                <li>Design UI/UX</li>
             </List>
           </Card>
           <Card>
@@ -110,7 +119,7 @@ export default function Home() {
           </Card>
         </Grid>
         {/* Feedbacks */}
-        <Grid columns={2} id={'feedbacks'}>
+        <Grid columns={4} id={'feedbacks'}>
           <Card>
             <Small>Feedback</Small>
             <Feedback avatar={'/images/avatar1.jpg'} name={'Ana P.'} />
@@ -131,6 +140,34 @@ export default function Home() {
             <Feedback avatar={'/images/avatar4.jpg'} name={'Junior H.'} />
             <Paragraph fontStyle='italic'>
               {'"A L009 trouxe uma visão totalmente nova para nossos processos internos. As integrações personalizadas reduziram erros manuais e aumentaram a agilidade das entregas. Hoje conseguimos tomar decisões com base em dados reais e em tempo recorde."'}
+            </Paragraph>
+          </Card>
+          <Card>
+            <Small>Feedback</Small>
+            <Feedback avatar={'/images/avatar5.jpg'} name={'Camila R.'} />
+            <Paragraph fontStyle='italic'>
+              {'"Desde que a L009 implementou as automações no nosso e-commerce, conseguimos reduzir erros operacionais e aumentar o volume de pedidos processados. A equipe é super atenciosa e sempre pronta para adaptar as soluções conforme nossas necessidades!"'}
+            </Paragraph>
+          </Card>
+          <Card>
+            <Small>Feedback</Small>
+            <Feedback avatar={'/images/avatar6.jpg'} name={'Fernanda L.'} />
+            <Paragraph fontStyle='italic'>
+              {'"O chatbot desenvolvido pela L009 transformou nosso atendimento online. Hoje respondemos clientes em segundos, com uma experiência muito mais humana e personalizada. Uma das melhores decisões que tomamos!"'}
+            </Paragraph>
+          </Card>
+          <Card>
+            <Small>Feedback</Small>
+            <Feedback avatar={'/images/avatar7.jpg'} name={'Isabela M.'} />
+            <Paragraph fontStyle='italic'>
+              {'"A campanha de tráfego pago criada pela L009 elevou nossas vendas em menos de um mês. A comunicação da equipe é excelente, e o acompanhamento de resultados é transparente e constante. Recomendo de olhos fechados!"'}
+            </Paragraph>
+          </Card>
+          <Card>
+            <Small>Feedback</Small>
+            <Feedback avatar={'/images/avatar8.jpg'} name={'Beatriz S.'} />
+            <Paragraph fontStyle='italic'>
+              {'"O aplicativo personalizado que a L009 desenvolveu para nossa equipe de campo facilitou totalmente o controle de tarefas. Interface linda, simples e funcional. Ficamos impressionadas com a agilidade da entrega!"'}
             </Paragraph>
           </Card>
         </Grid>
