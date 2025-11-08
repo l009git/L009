@@ -8,13 +8,13 @@
 }
 
 .success {
-  color: #00ff80;
+  color: var(--theme);
 }
 
 .error {
-  color: #ff0044;
+  color: var(--theme);
 }
 
 .info {
-  color: #00d9ff;
+  color: var(--theme);
 }
