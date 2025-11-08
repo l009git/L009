@@ -26,7 +26,7 @@ export default function Home() {
       <Header />
       <Main>
         {/* Services */}
-        <Grid columns={2} id="services">
+        <Grid columns={3} id="services">
           <Card>
             <Small>Serviço</Small>
             <Title>Automação de processos</Title>
