@@ -39,7 +39,7 @@ export default function Home() {
           </Card>
           <Card>
             <Small>Serviço</Small>
-            <Title>Chatbot Inteligentes</Title>
+            <Title>Chatbot<br></br>Inteligentes</Title>
             <Paragraph>Implemente chatbots inteligentes e transforme seu atendimento com inteligência artificial. Ofereça respostas rápidas, reduza o tempo de espera e aumente a conversão de leads 24 horas por dia, 7 dias por semana. Ideal para empresas que desejam escalar o suporte com eficiência e personalização.</Paragraph>
             <List>
                 <li>Whats. Telegram e Discord</li>
@@ -49,7 +49,7 @@ export default function Home() {
           </Card>
           <Card>
             <Small>Serviço</Small>
-            <Title>Tráfego pago</Title>
+            <Title>Tráfego<br></br>pago</Title>
             <Paragraph>Aumente sua visibilidade e conversões com campanhas estratégicas de tráfego pago. Segmentação precisa, testes A/B e otimização contínua para maximizar o ROI. Conquiste resultados reais com mídia paga inteligente e mensurável.</Paragraph>
             <List>
                 <li>Meta Ads</li>
