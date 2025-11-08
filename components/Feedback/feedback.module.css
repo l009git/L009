@@ -32,6 +32,6 @@
 }
 
 .feedbackStars i {
-    color: #fc034e;
+    color: var(--theme);
     font-size: 14px;
 }

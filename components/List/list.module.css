@@ -12,7 +12,7 @@
 
 .list > li::before {
     content: "●";
-    color: var(--primary);
+    color: var(--theme);
     display: inline-block;
     text-align: center;
     margin-right: 10px;

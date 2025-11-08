@@ -8,7 +8,7 @@
 .social > i {
     padding-right: 20px;
     font-size: 35px;
-    color: #fff;
+    color: var(--theme);
     border-right: 1px solid #222;
 }
 
