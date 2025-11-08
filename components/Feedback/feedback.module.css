@@ -36,10 +36,10 @@
 .feedbackStars i {
     color: var(--theme);
     font-size: 14px;
-    animation: neon-flicker 10s linear infinite;
+    animation: star-rotate 10s linear infinite;
 }
 
-@keyframes neon-flicker {
+@keyframes star-rotate {
     0% { transform: rotate(0); }
     100% { transform: rotate(360deg); }
 }
