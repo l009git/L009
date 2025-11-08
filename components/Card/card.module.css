@@ -82,6 +82,3 @@
   50% { opacity: 1; }
 }
 
-@media all and (max-width: 900px) {
-  :root { --background-color: #060606; }
-}
