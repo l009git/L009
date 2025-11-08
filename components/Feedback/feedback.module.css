@@ -29,7 +29,7 @@
 .feedbackStars {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 7px;
 }
 
 .feedbackStars i {
