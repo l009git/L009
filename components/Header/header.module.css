@@ -5,11 +5,9 @@
   justify-content: center;
   gap: 5px;
   width: 100%;
-  min-height: 400px;
   max-width: 1200px;
+  min-height: 400px;
   margin: 0 auto 30px auto;
-  padding: 40px;
-  border-radius: 0 0 15px 15px;
 }
 
 .logoArea {

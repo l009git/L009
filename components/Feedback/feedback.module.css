@@ -35,5 +35,13 @@
 
 .feedbackStars i {
     color: var(--theme);
-    font-size: 14px;
+    font-size: 18px; /* Aumentei o tamanho para o efeito ser mais visível */
+    cursor: pointer; /* Adiciona um cursor para indicar interatividade, se for o caso */
+    
+    /* Efeito de brilho/sombra */
+    text-shadow: 0 0 5px var(--theme), /* Brilho suave */
+                 0 0 10px rgba(255, 255, 255, 0.1); /* Brilho mais intenso e espalhado */
+    
+    /* Aplicação da Animação */
+    animation: cintilar 1.5s ease-in-out infinite alternate;
 }
