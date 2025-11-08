@@ -2,10 +2,10 @@
   --border-radius: 15px;
   --border-width: 3px;
   --border-color: #fff;
-  --inside-border-color: #111;
+  --inside-border-color: #202020;
   --padding: 20px;
   --gap: 15px;
-  --background-color: #000;
+  --background-color: #070707;
   --rotate-speed: 4s;
   --pulse-speed: 3s;
 }
