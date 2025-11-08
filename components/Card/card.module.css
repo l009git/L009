@@ -1,7 +1,7 @@
 :root {
   --border-radius: 15px;
   --border-width: 3px;
-  --border-color: #fff;
+  --border-color: var(--theme);
   --inside-border-color: #202020;
   --padding: 20px;
   --gap: 15px;
