@@ -141,8 +141,8 @@ export default function Home() {
           <Link href="/#services">Serviços</Link>
           <Link href="/#contact">Contato</Link>
           <Link href="/#feedbacks">Feedbacks</Link>
-          <Link href="/terms">Termos de uso</Link>
-          <Link href="/policy">Políticas de privacidade</Link>
+          <Link href="/pages/terms">Termos de uso</Link>
+          <Link href="/pages/policy">Políticas de privacidade</Link>
         </nav>
       </Footer>
     </>

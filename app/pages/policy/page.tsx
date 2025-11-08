@@ -104,7 +104,7 @@ export default function Home() {
           <Link href="/#home">Início</Link>
           <Link href="/">Página inicial</Link>
           <Link href="/#contact">Contato</Link>
-          <Link href="/terms">Termos de uso</Link>
+          <Link href="/pages/terms">Termos de uso</Link>
         </nav>
       </Footer>
     </>

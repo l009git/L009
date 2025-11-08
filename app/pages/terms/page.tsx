@@ -98,7 +98,7 @@ export default function Home() {
           <Link href="/#home">Início</Link>
           <Link href="/">Página inicial</Link>
           <Link href="/#contact">Contato</Link>
-          <Link href="/policy">Políticas de privacidade</Link>
+          <Link href="/pages/policy">Políticas de privacidade</Link>
         </nav>
       </Footer>
     </>
