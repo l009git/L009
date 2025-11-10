@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Protection from '@/components/Protection/Protection';
+import Background from "@/components/Background/Background";
 
 import "./globals.css";
 
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <Protection>
+          <Background />
           {children}
         </Protection>
         <Analytics />
