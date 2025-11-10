@@ -1,11 +1,11 @@
 :root {
   --border-radius: 15px;
-  --border-width: 2px;
+  --border-width: 3px;
   --border-color: var(--theme);
   --inside-border-color: #202020;
   --padding: 20px;
   --gap: 15px;
-  --background-color: #000;
+  --background-color: #101010;
   --rotate-speed: 4s;
   --pulse-speed: 3s;
 }
