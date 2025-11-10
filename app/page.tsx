@@ -15,8 +15,8 @@ import Social from '@/components/Social/Social';
 import Header from '@/components/Header/Header';
 import Main from '@/components/Main/Main'
 import Footer from '@/components/Footer/Footer';
-import Link from 'next/link';
 import List from '@/components/List/List';
+import Link from 'next/link';
 
 export default function Home() {
   const { form, result, loading, handleChange, handleSubmit } = ContactForm();
