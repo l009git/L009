@@ -9,3 +9,7 @@
     opacity: 0.2;
     filter: blur(2px) grayscale(100%);
 }
+
+@media all and (max-width: 900px) {
+  .videoPlayer { opacity: 0.1; }
+}
