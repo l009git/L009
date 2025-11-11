@@ -16,6 +16,7 @@ import Header from '@/components/Header/Header';
 import Main from '@/components/Main/Main'
 import Footer from '@/components/Footer/Footer';
 import List from '@/components/List/List';
+import Video from '@/components/Video/Video';
 import Link from 'next/link';
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <>
+      <Video mp4Src={'/videos/background.mp4'} />
       <Header />
       <Main>
         {/* Services */}

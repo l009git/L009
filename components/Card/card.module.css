@@ -6,8 +6,8 @@
   --padding: 20px;
   --gap: 15px;
   --background-color: #101010;
-  --rotate-speed: 4s;
-  --pulse-speed: 3s;
+  --rotate-speed: 10s;
+  --pulse-speed: 5s;
 }
 
 .card {
@@ -38,6 +38,7 @@
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
+    transparent,
     transparent,
     var(--border-color),
     transparent,
