@@ -17,7 +17,12 @@
   width: 100%;
   border-radius: var(--border-radius);
   overflow: hidden;
+  opacity: 0.3;
 } 
+
+.card-hover {
+  opacity: 1;
+}
 
 .card-border {
   position: absolute;
