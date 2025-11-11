@@ -1,6 +1,6 @@
 :root {
   --border-radius: 15px;
-  --border-width: 3px;
+  --border-width: 2px;
   --border-color: var(--theme);
   --inside-border-color: #202020;
   --padding: 20px;
