@@ -11,5 +11,5 @@
 }
 
 @media all and (max-width: 900px) {
-  .videoPlayer { opacity: 0.05; }
+  .videoPlayer { opacity: 0.1; }
 }
