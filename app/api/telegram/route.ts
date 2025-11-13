@@ -14,7 +14,7 @@ bot.on("text", async (ctx) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: userMessage,
-        instructions: `Você é o Agente de Suporte e Vendas da L009. Nosso foco é automação, inteligência artificial e desenvolvimento de software.
+        instructions: `Você é o Agente de Suporte e Vendas da L009 chamada Lumni. Nosso foco é automação, inteligência artificial e desenvolvimento de software.
 
 SEU OBJETIVO: Informar sobre os serviços da L009 e direcionar o usuário aos canais de contato adequados.
 
