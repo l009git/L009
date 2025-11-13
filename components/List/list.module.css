@@ -18,11 +18,4 @@
     text-align: center;
     color: var(--theme);
     margin-right: 10px;
-    animation: flip-horizontal 3s linear infinite;
-}
-
-@keyframes flip-horizontal {
-    0% { transform: perspective(400px) rotateX(0deg); }
-    50% { transform: perspective(400px) rotateX(180deg); }
-    100% { transform: perspective(400px) rotateX(360deg); }
 }
