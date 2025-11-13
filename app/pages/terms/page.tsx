@@ -80,7 +80,7 @@ export default function Home() {
               </Button>
             </Grid>
           </Card>
-          <Grid columns={3}>
+          <Grid columns={4}>
             <Card>
               <Social href="https://wa.me/5516992399723?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20oficial%20para%20tirar%20d%C3%BAvidas%20sobre%20os%20servi%C3%A7os%20prestados." icon="bi bi-whatsapp" label="Whatsapp"></Social>
             </Card>
@@ -89,6 +89,9 @@ export default function Home() {
             </Card>
             <Card>
               <Social href="https://discord.gg/wtzmwMnG" icon="bi bi-discord" label="Discord"></Social>
+            </Card>
+            <Card>
+              <Social href="#" icon="bi bi-linkedin" label="Linkedin"></Social>
             </Card>
           </Grid>
         </Grid>
