@@ -71,17 +71,6 @@ export default function Home() {
 
         {/* Contact */}
         <Grid columns={1} id={'contact'}>
-          <Grid columns={3}>
-            <Card>
-              <Social href="https://wa.me/5516992399723?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20oficial%20para%20tirar%20d%C3%BAvidas%20sobre%20os%20servi%C3%A7os%20prestados." icon="bi bi-whatsapp" label="Whatsapp"></Social>
-            </Card>
-            <Card>
-              <Social href="https://t.me/L009TelegramBot" icon="bi bi-telegram" label="Telegram"></Social>
-            </Card>
-            <Card>
-              <Social href="https://discord.gg/wtzmwMnG" icon="bi bi-discord" label="Discord"></Social>
-            </Card>
-          </Grid>
           <Card>
             <Title>Contato</Title>
             <Paragraph>Preencha os campos abaixo para que possamos entrar em contato com você posteriormente.</Paragraph>
@@ -117,6 +106,17 @@ export default function Home() {
               <Button onClick={handleSubmit} disabled={loading}>
                 {loading ? 'Enviando...' : 'Enviar'}
               </Button>
+            </Grid>
+            <Grid columns={3}>
+              <Card>
+                <Social href="https://wa.me/5516992399723?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20oficial%20para%20tirar%20d%C3%BAvidas%20sobre%20os%20servi%C3%A7os%20prestados." icon="bi bi-whatsapp" label="Whatsapp"></Social>
+              </Card>
+              <Card>
+                <Social href="https://t.me/L009TelegramBot" icon="bi bi-telegram" label="Telegram"></Social>
+              </Card>
+              <Card>
+                <Social href="https://discord.gg/wtzmwMnG" icon="bi bi-discord" label="Discord"></Social>
+              </Card>
             </Grid>
           </Card>
         </Grid>
