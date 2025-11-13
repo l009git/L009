@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,6 +9,30 @@
     max-width: 1300px;
     min-height: 100vh;
     margin: 0 auto 30px auto;
+}
+
+.header a {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: headerArrow 1s linear infinite;
+    opacity: 0.5;
+}
+
+.header a i {
+    font-size: 40px;
+    margin-left: -15px;
+    color: #fff;
+}
+    
+.header a:hover {
+    opacity: 1;
+}
+
+@keyframes headerArrow {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(15px); }
 }
 
 .logoArea {
@@ -45,10 +70,6 @@
 
 @media screen and (max-width: 800px) {
     .header {
-        flex-direction: column;
         gap: 15px;
-    }
-    .textArea {
-        align-items: center;
     }
 }

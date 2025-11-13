@@ -11,6 +11,9 @@ export default function Header() {
           <h2>Mais tempo, mais vida.</h2>
           <p>Automatizamos sua vida digital, para que você possa disfrutar mais do seu tempo.</p>
         </div>
+        <a href="#services">
+          <i className="bi bi-arrow-down-circle-fill"></i>
+        </a>
     </div>
   );
 }
