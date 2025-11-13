@@ -1,54 +1,54 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  width: 100%;
-  max-width: 1300px;
-  min-height: 500px;
-  margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 500px;
+    margin: 0 auto 30px auto;
 }
 
 .logoArea {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .textArea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .textArea h2 {
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
 }
 
 .textArea p {
-  width: 100%;
-  max-width: 350px;
-  padding-inline: 20px;
-  font-size: 14px;
-  padding-top: 10px;
-  border-top: 1px solid #222;
-  line-height: 1.5;
-  text-align: center;
-  color: #666;
+    width: 100%;
+    max-width: 350px;
+    padding-inline: 20px;
+    font-size: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #222;
+    line-height: 1.5;
+    text-align: center;
+    color: #666;
 }
 
 @media screen and (max-width: 800px) {
-  .header {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .textArea {
-    align-items: center;
-  }
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .textArea {
+        align-items: center;
+    }
 }
