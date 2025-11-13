@@ -17,7 +17,7 @@
     left: 50%;
     transform: translateX(-50%);
     animation: headerArrow 1s linear infinite;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .header a i {
