@@ -6,7 +6,11 @@ interface SmallProps {
 }
 
 const Small: React.FC<SmallProps> = ({ children }) => {
-  return <span className={styles.small}>{children}</span>;
+  return (
+      <small className={styles.small}> 
+          {children}
+      </small>
+  );
 };
 
 export default Small;

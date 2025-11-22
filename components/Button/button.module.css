@@ -1,16 +1,16 @@
 .button {
-  width: fit-content;
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #202020;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #202020;
 }
 
 .button:hover {
-  color: #000;
-  background-color: var(--theme);
+    color: #000;
+    background-color: var(--theme);
 }

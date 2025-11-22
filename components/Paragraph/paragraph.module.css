@@ -1,6 +1,10 @@
-.paragraph {
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #bbb;
+p.paragraph {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #888;
+}
+
+p.paragraph > strong {
+    font-size: 15px;
 }

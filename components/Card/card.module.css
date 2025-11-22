@@ -1,91 +1,14 @@
-:root {
-  --border-radius: 15px;
-  --border-width: 2px;
-  --border-color: var(--theme);
-  --inside-border-color: #202020;
-  --padding: 20px;
-  --gap: 15px;
-  --background-color: #101010;
-  --rotate-speed: 10s;
-  --pulse-speed: 5s;
-}
+div.card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 35px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    box-shadow: -10px -10px 20px rgba(35, 35, 35, 0.4), 10px 10px 20px rgba(0, 0, 0, 0.8);
+} 
 
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-}
-
-.card-border {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: inherit;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.card-border::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 9999px;
-  height: 9999px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    transparent,
-    transparent,
-    transparent,
-    var(--border-color),
-    transparent,
-    transparent,
-    transparent
-  );
-  transform: translate(-50%, -50%) rotate(0deg);
-  animation:
-    rotate var(--rotate-speed) linear infinite,
-    pulse var(--pulse-speed) ease-in-out infinite alternate;
-  will-change: transform, opacity;
-}
-
-.card:nth-of-type(even) .card-border::before {
-  animation:
-    rotate-reverse var(--rotate-speed) linear infinite,
-    pulse var(--pulse-speed) ease-in-out infinite alternate;
-}
-
-.card-container {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-  padding: var(--padding);
-  margin: var(--border-width);
-  border-radius: calc(var(--border-radius) - var(--border-width));
-  background-color: var(--background-color);
-  border: 1px solid var(--inside-border-color);
-  flex-grow: 1;
-}
-
-@keyframes rotate {
-  100% { transform: translate(-50%, -50%) rotate(1turn); }
-}
-
-@keyframes rotate-reverse {
-  100% { transform: translate(-50%, -50%) rotate(-1turn); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-@media all and (max-width: 900px) {
-  :root { --background-color: #070707; }
+div.card p {
+    flex: 1;
 }

@@ -1,22 +1,22 @@
-.social {
+a.social {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
 }
 
-.social > i {
+a.social > i {
     padding-right: 20px;
-    font-size: 35px;
-    color: var(--theme);
-    border-right: 1px solid #222;
+    font-size: 30px;
+    color: #fff;
+    border-right: 1px solid #000;
 }
 
-.social > p {
-    padding: 0 20px;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    color: #fff;
+a.social > p {
+    font-family: 'Saira', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--theme);
 }

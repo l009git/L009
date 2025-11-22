@@ -1,20 +1,13 @@
-.result {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #222;
-  border-radius: 6px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.success {
-  color: var(--theme);
-}
-
-.error {
-  color: var(--theme);
-}
-
-.info {
-  color: var(--theme);
+span.result {
+    width: 100%;
+    padding: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--theme);
+    text-shadow: 1px 1px 1px #000;
+    border-color: #222;
+    box-shadow: 1px 1px 1px #000;
 }

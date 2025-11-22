@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-:root { --theme: #fff; }
+:root {
+    --theme: #fff;
+    --bgColor: #101010;
+}
 
 *,
 *::after,
@@ -28,9 +31,8 @@ html {
     scroll-behavior: smooth;
 }
 
-body { 
-    max-width: 100vw;
-    background-color: #000;
+body {
+    background-color: var(--bgColor);
 }
 
 ::-webkit-scrollbar { width: 7px; }
@@ -48,7 +50,3 @@ textarea::-webkit-scrollbar-thumb { background: var(--theme); }
 textarea::-webkit-scrollbar-thumb:hover {  background: var(--theme); }
 
 .hidden { display: none !important; }
-
-@media all and (max-width: 1200px) {
-    body { padding-inline: 20px; }
-}

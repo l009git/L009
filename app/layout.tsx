@@ -9,19 +9,19 @@ import "./globals.css";
 export const metadata: Metadata = metadataObject;
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        <Protection>
-          {children}
-        </Protection>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
-  );
+    return (
+        <html lang="pt-BR">
+            <body>
+                <Protection>
+                    {children}
+                </Protection>
+                <Analytics />
+                <SpeedInsights />
+            </body>
+        </html>
+    );
 }

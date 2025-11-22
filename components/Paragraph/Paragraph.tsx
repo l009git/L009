@@ -6,12 +6,13 @@ interface ParagraphProps {
   fontStyle?: string;
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({ children, fontStyle = 'normal' }) => {
+const Paragraph: React.FC<ParagraphProps> = ({ children , fontStyle = 'normal' }) => {
   return (
-    <span className={styles.paragraph} style={{ fontStyle }}>
+    <p className={styles.paragraph} style={{ fontStyle }}>
       {children}
-    </span>
+    </p>
   );
 };
 
 export default Paragraph;
+

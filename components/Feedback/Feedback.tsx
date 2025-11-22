@@ -11,9 +11,8 @@ interface FeedbackProps {
 const Feedback: React.FC<FeedbackProps> = ({ avatar, name }) => {
     return (
         <div className={styles.feedback}>
-            
             <div className={styles.feedbackDetails}>
-                <Title>{name}</Title> 
+                <Title>{name}</Title>
                 <div className={styles.feedbackStars}>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>

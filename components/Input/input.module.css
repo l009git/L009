@@ -1,14 +1,15 @@
-.input {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #222;
-  border-radius: 6px;
-  font-size: 14px;
-  color: #fff;
-  resize: none;
-  background-color: transparent;
+input.input {
+    width: 100%;
+    padding: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--theme);
+    border-color: #222;
+    background-color: transparent;
 }
 
-.input:focus {
-  border-color: #444;
+input.input:focus {
+    border-color: #333;
 }
