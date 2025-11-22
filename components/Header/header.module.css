@@ -54,7 +54,8 @@
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 300;
-    color: #999;
+    color: #666;
+    letter-spacing: 2px;
 }
 
 .textArea p {
