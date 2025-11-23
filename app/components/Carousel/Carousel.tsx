@@ -7,7 +7,7 @@ const Carousel = function() {
             <div className={style.group}>
                 <div><Image src='/images/carousel_flutter.png' alt='Logo Flutter' width={200} height={50} style={{ objectFit: 'cover' }} priority /></div>
                 <div><Image src='/images/carousel_next.png' alt='Logo Next' width={200} height={50} style={{ objectFit: 'cover' }} priority /></div>
-                <div><Image src='/images/carousel_react.png' alt='Logo React' width={200} height={50} style={{ objectFit: 'cover' }} priority /></div>
+                <div><Image src='/images/carousel_react.png' alt='Logo React' width={200} height={50} style={{ objectFit: 'contain' }} priority /></div>
                 <div><Image src='/images/carousel_php.png' alt='Logo PHP' width={200} height={50} style={{ objectFit: 'cover' }} priority /></div>
                 <div><Image src='/images/carousel_mysql.png' alt='Logo Mysql' width={200} height={50} style={{ objectFit: 'cover' }} priority /></div>
                 <div><Image src='/images/carousel_python.png' alt='Logo Python' width={200} height={50} style={{ objectFit: 'cover' }} priority /></div>
