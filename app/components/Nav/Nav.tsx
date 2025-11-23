@@ -8,10 +8,7 @@ const Nav = function() {
         <nav className={style.nav}>
             <Link href='#'>
                 <img src='../images/nav_logo.png' alt='dsd'></img>
-                <div>
-                    <p>More time,</p>
-                    <p>More life!</p>
-                </div>
+                <p>More time, more life!</p>
             </Link>
             <Link href='#'>
                 <p>Contact Us</p>
