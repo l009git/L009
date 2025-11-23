@@ -1,0 +1,66 @@
+div.card {
+    position: relative;
+    width: 100%;
+    padding: 2px;
+    border-radius: 10px 40px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+    --bgSize: 1000px;
+}
+
+div.card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1; 
+    width: var(--bgSize);
+    height: var(--bgSize);
+    transform: translate(-50%, -50%); 
+    background: conic-gradient(
+        from 0deg,
+        #000, 
+        transparent, 
+        #000, 
+        transparent, 
+        #000
+    );
+    animation: rotateBorder 6s linear infinite; 
+}
+
+div.card:nth-child(even)::before {
+    animation: rotateBorder 5s linear infinite reverse; 
+}
+
+@keyframes rotateBorder {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+div.card > div {
+    position: relative; 
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 7px 40px;
+    background-color: #f9f9f9;
+}
+
+div.card > div > h2 {
+    font-family: "Saira", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+div.card > div > p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777;
+}

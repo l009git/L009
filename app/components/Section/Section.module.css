@@ -1,0 +1,26 @@
+section.section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding-top: 30px;
+    border-top: 1px dashed #ddd;
+}
+
+section.section > h1 {
+    font-family: "Saira", sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+}
+
+section.section > p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    color: #888;
+    margin-bottom: 15px;
+}
