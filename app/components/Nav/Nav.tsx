@@ -6,7 +6,7 @@ import style from './Nav.module.css';
 const Nav = function() {
     return (
         <nav className={style.nav}>
-            <Link href='#'>
+            <Link href='/'>
                 <img src='../images/nav_logo.png' alt='dsd'></img>
                 <p>More time, more life!</p>
             </Link>
