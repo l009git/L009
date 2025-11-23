@@ -26,13 +26,17 @@ div.carousel > div.group > div {
     justify-content: center;
     width: fit-content;
     min-width: 200px;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     background-color: #f9f9f9;
 }
 
 div.carousel > div.group > div > img {
-    filter: grayscale(0%);
+    height: 40px;
+    object-fit: cover;
+    image-rendering: optimizeQuality;
+    filter: grayscale(100%) drop-shadow(1px 1px 1px #fff);
+    
 }
 
 div.carousel > div.group > div:last-child {
