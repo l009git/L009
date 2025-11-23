@@ -1,6 +1,7 @@
 import Section from '../Section/Section';
 import Grid from '../Grid/Grid';
 import Card from '../Card/Card';
+import Caurasel from '../Carousel/Carousel';
 import style from './Main.module.css';
 
 const Main = function() {
@@ -33,6 +34,9 @@ const Main = function() {
                         <p>Our technology consulting services help your business make informed decisions. We analyze your current tech stack, define a future technology roadmap, and ensure your investments drive innovation, efficiency, and long-term business growth.</p>
                     </Card>
                 </Grid>
+            </Section>
+            <Section gap='15px' title='Expertises' description='Here are the technologies we work with, so we can develop your project or assist your team in its development.'>
+                <Caurasel />
             </Section>
         </main>
     );
