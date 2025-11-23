@@ -9,8 +9,7 @@ const Footer = function() {
             <div>
                 <Link href='#'>About</Link>
                 <Link href='#'>Contact</Link>
-                <Link href='#'>Terms of use</Link>
-                <Link href='#'>Privacy policy</Link>
+                <Link href='#'>Privacy & Terms</Link>
             </div>
             <div>
                 <small>L009 DIGITAL SOLUTIONS LTD - CNPJ: 61.114.588/0001-07.</small>
