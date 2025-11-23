@@ -13,7 +13,7 @@ const Footer = function() {
             </div>
             <div>
                 <small>L009 DIGITAL SOLUTIONS LTD - CNPJ: 61.114.588/0001-07.</small>
-                <small>Designed and developed by L009.</small>
+                <small>Designed and developed by the Brazilian company L009.</small>
                 <small>All rights reserved © {currentYear}.</small>
             </div>
         </footer>

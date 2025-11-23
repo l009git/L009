@@ -3,6 +3,8 @@ div.carousel {
     width: 100%;
     border-radius: 10px;
     overflow-x: auto;
+    touch-action: none;
+    user-select: none;
 }
 
 div.carousel::-webkit-scrollbar {
@@ -14,6 +16,7 @@ div.carousel > div.group {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    flex-shrink: 0;
     animation: carousel 20s infinite linear;
 }
 
